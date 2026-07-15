@@ -4,11 +4,75 @@
     "sitemapUrl": "https://www.desitec.com.mx/sitemap_index.xml"
   },
   {
+    "siteUrl": "sc-domain:desitec.com.mx",
+    "sitemapUrl": "https://www.desitec.com.mx/post-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:desitec.com.mx",
+    "sitemapUrl": "https://www.desitec.com.mx/page-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:desitec.com.mx",
+    "sitemapUrl": "https://www.desitec.com.mx/product-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:desitec.com.mx",
+    "sitemapUrl": "https://www.desitec.com.mx/product-sitemap2.xml"
+  },
+  {
+    "siteUrl": "sc-domain:desitec.com.mx",
+    "sitemapUrl": "https://www.desitec.com.mx/product_cat-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:desitec.com.mx",
+    "sitemapUrl": "https://www.desitec.com.mx/product_tag-sitemap.xml"
+  },
+  {
     "siteUrl": "sc-domain:sistemacontraincendio.com",
     "sitemapUrl": "https://www.sistemacontraincendio.com/sitemap_index.xml"
   },
   {
+    "siteUrl": "sc-domain:sistemacontraincendio.com",
+    "sitemapUrl": "https://www.sistemacontraincendio.com/post-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:sistemacontraincendio.com",
+    "sitemapUrl": "https://www.sistemacontraincendio.com/page-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:sistemacontraincendio.com",
+    "sitemapUrl": "https://www.sistemacontraincendio.com/product-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:sistemacontraincendio.com",
+    "sitemapUrl": "https://www.sistemacontraincendio.com/product_cat-sitemap.xml"
+  },
+  {
+    "siteUrl": "sc-domain:sistemacontraincendio.com",
+    "sitemapUrl": "https://www.sistemacontraincendio.com/product_tag-sitemap.xml"
+  },
+  {
     "siteUrl": "sc-domain:equiposdeseguridadmexico.com",
     "sitemapUrl": "https://www.equiposdeseguridadmexico.com/sitemap_index.xml"
+  }
+  {
+    "siteUrl": "sc-domain:equiposdeseguridadmexico.com",
+    "sitemapUrl": "https://www.equiposdeseguridadmexico.com/post-sitemap.xml"
+  }
+  {
+    "siteUrl": "sc-domain:equiposdeseguridadmexico.com",
+    "sitemapUrl": "https://www.equiposdeseguridadmexico.com/page-sitemap.xml"
+  }
+  {
+    "siteUrl": "sc-domain:equiposdeseguridadmexico.com",
+    "sitemapUrl": "https://www.equiposdeseguridadmexico.com/product-sitemap.xml"
+  }
+  {
+    "siteUrl": "sc-domain:equiposdeseguridadmexico.com",
+    "sitemapUrl": "https://www.equiposdeseguridadmexico.com/product_cat-sitemap.xml"
+  }
+  {
+    "siteUrl": "sc-domain:equiposdeseguridadmexico.com",
+    "sitemapUrl": "https://www.equiposdeseguridadmexico.com/product_tag-sitemap.xml"
   }
 ]

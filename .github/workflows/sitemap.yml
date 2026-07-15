@@ -2,7 +2,7 @@ name: Submit Sitemaps
 
 on:
   schedule:
-    - cron: "0 20 * * 5"
+    - cron: "0 19 * * 5"
 
   workflow_dispatch:
 
