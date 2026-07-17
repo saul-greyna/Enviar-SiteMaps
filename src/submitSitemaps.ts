@@ -65,3 +65,4 @@ export async function submitSitemaps() {
   if (errors > 0) {
     throw new Error(`${errors} sitemap(s) no pudieron enviarse`);
   }
+}
