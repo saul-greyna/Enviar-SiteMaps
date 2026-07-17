@@ -2,13 +2,15 @@ name: Submit Sitemaps
 
 on:
   schedule:
-    - cron: "0 19 * * 5"
+    - cron: "0 13 * * 5"
+      timezone: "America/Mexico_City"
 
   workflow_dispatch:
 
 jobs:
   submit:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - name: Checkout repository
@@ -18,9 +20,10 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 24
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Create auth files
         run: |

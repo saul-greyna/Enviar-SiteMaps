@@ -61,4 +61,7 @@ export async function submitSitemaps() {
   console.log(`Enviados: ${success}`);
   console.log(`Errores: ${errors}`);
   console.log("=================================\n");
-}
+
+  if (errors > 0) {
+    throw new Error(`${errors} sitemap(s) no pudieron enviarse`);
+  }
