@@ -1,28 +1,64 @@
-import { readFile } from "node:fs/promises";
 import { google } from "googleapis";
 
+const SCOPES = [
+  "https://www.googleapis.com/auth/webmasters",
+];
+
+interface ServiceAccountCredentials {
+  type: string;
+  project_id?: string;
+  private_key_id?: string;
+  private_key: string;
+  client_email: string;
+  client_id?: string;
+  token_uri?: string;
+}
+
+function getServiceAccountCredentials(): ServiceAccountCredentials {
+  const rawCredentials =
+    process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+
+  if (!rawCredentials) {
+    throw new Error(
+      "No se encontró la variable GOOGLE_SERVICE_ACCOUNT_JSON."
+    );
+  }
+
+  let credentials: ServiceAccountCredentials;
+
+  try {
+    credentials = JSON.parse(
+      rawCredentials
+    ) as ServiceAccountCredentials;
+  } catch {
+    throw new Error(
+      "GOOGLE_SERVICE_ACCOUNT_JSON no contiene un JSON válido."
+    );
+  }
+
+  if (
+    credentials.type !== "service_account" ||
+    !credentials.client_email ||
+    !credentials.private_key
+  ) {
+    throw new Error(
+      "Las credenciales no corresponden a una cuenta de servicio válida."
+    );
+  }
+
+  credentials.private_key =
+    credentials.private_key.replace(/\\n/g, "\n");
+
+  return credentials;
+}
+
 export async function getAuthenticatedClient() {
-  const credentials = JSON.parse(
-    await readFile("./auth/oauth.json", "utf8")
-  );
+  const credentials = getServiceAccountCredentials();
 
-  const token = JSON.parse(
-    await readFile("./auth/token.json", "utf8")
-  );
+  const auth = new google.auth.GoogleAuth({
+    credentials,
+    scopes: SCOPES,
+  });
 
-  const {
-    client_id,
-    client_secret,
-    redirect_uris,
-  } = credentials.installed;
-
-  const oauth2Client = new google.auth.OAuth2(
-    client_id,
-    client_secret,
-    redirect_uris[0]
-  );
-
-  oauth2Client.setCredentials(token);
-
-  return oauth2Client;
+  return auth;
 }
