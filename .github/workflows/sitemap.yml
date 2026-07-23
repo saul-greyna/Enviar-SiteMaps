@@ -2,10 +2,13 @@ name: Submit Sitemaps
 
 on:
   schedule:
-    - cron: "0 13 * * 5"
+    - cron: "30 13 * * 5"
       timezone: "America/Mexico_City"
 
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   submit:
@@ -25,13 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create auth files
-        run: |
-          mkdir -p auth
-
-          echo '${{ secrets.OAUTH_JSON }}' > auth/oauth.json
-
-          echo '${{ secrets.TOKEN_JSON }}' > auth/token.json
-
       - name: Submit sitemaps
+        env:
+          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         run: npx tsx src/index.ts
