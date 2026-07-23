@@ -31,4 +31,8 @@ jobs:
       - name: Submit sitemaps
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+<<<<<<< HEAD
         run: npx tsx src/index.ts
+=======
+        run: npx tsx src/index.ts
+>>>>>>> 7734be94dd89744a40f14d1406f60816ba53a000
